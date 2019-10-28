@@ -6,20 +6,23 @@
 
 
 TEST_CASE("removeLeadingSpaces"){
-  CHECK(removeLeadingSpaces("") == "");
-  CHECK(removeLeadingSpaces("  adfadf") == "adfadf");
-  CHECK(removeLeadingSpaces("            ") == "");
-  CHECK(removeLeadingSpaces(" 123") == "123");
+	CHECK(removeLeadingSpaces("") == "");
+	CHECK(removeLeadingSpaces("  adfadf") == "adfadf");
+	CHECK(removeLeadingSpaces("            ") == "");
+	CHECK(removeLeadingSpaces(" 123") == "123");
 }
 
 TEST_CASE("countChar"){
-  CHECK(countChar("asfadfadfadfadfasdf", 'a') == 6);
-  CHECK(countChar("asfadfadfadfadfasdf", 'f') == 6);
-  CHECK(countChar("a a a a ", ' ') == 4);
-  CHECK(countChar("", 'a') == 0);
+	CHECK(countChar("asfadfadfadfadfasdf", 'a') == 6);
+	CHECK(countChar("asfadfadfadfadfasdf", 'f') == 6);
+	CHECK(countChar("a a a a ", ' ') == 4);
+	CHECK(countChar("", 'a') == 0);
 }
 
-// 
-// TEST_CASE("format"){
-//   CHECK(format("funcs.h") ==
-// }
+
+TEST_CASE("format"){
+	CHECK(format("funcs.h") ==read("funcs.h"));
+	CHECK(format("main.cpp") ==read("main.cpp"));
+	CHECK(format("tests.cpp") ==read("tests.cpp"));
+	CHECK(format("bad.cpp") ==read("good.cpp"));
+}

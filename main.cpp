@@ -2,11 +2,10 @@
 #include "doctest.h"
 #include "funcs.h"
 
-int main(int argc, char *argv[])
-{
-    std::string filename;
-    std::cout <<"Enter the filename: ";
-    std::cin>>filename;
-    std::cout << format(filename);
-    return 0;
+int main(int argc, char *argv[]){
+	std::string filename;
+	std::cout <<"Enter the filename: ";
+	std::cin>>filename;
+	std::cout << format(filename);
+	return 0;
 }
