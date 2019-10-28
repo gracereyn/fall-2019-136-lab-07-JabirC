@@ -22,3 +22,42 @@ int countChar(std::string line, char c){
   }
   return ret;
 }
+
+std::string format(std::string filename){
+  std::ifstream fin(filename);
+    if (fin.fail()) {
+        std::cerr << "File cannot be opened for reading." << std::endl;
+        exit(1); // exit if failed to open the file
+    }
+    std::string line = "";
+    std::string prog = "";
+    while(std::getline(fin,line)){
+        prog += removeLeadingSpaces(line) + "\n";
+    }
+    fin.close();
+    int lines = countChar(prog, '\n');
+    std::string program[lines];
+    int index = 0;
+    int i;
+    int stop = 0;
+    for(i=0;i<prog.length(); i++){
+      if(prog[i] == '\n'){
+        program[index] = prog.substr(stop, i-stop);
+        stop = i+1;
+        index++;
+      }
+    }
+    int braces = 0;
+    std::string ret ="";
+    for(i =0;i<lines;i++){
+      int y= 0;
+      if(program[i][0] == '}' )y++;
+      while (y < braces){
+        ret+="\t";
+        y++;
+      }
+      ret+= program[i]+ "\n";
+      braces += countChar(program[i], '{') - countChar(program[i], '}');
+    }
+    return ret;
+}

@@ -4,11 +4,9 @@
 
 int main(int argc, char *argv[])
 {
-    std::string line = "              helloo";
-    std::cout << std::endl << removeLeadingSpaces(line);
-    std::cout << std::endl << line;
-
-    std::string line2 = "vvvvvvvvvvgvvvvvvgvvvvg";
-    std::cout << std::endl << countChar(line2,'v');
+    std::string filename;
+    std::cout <<"Enter the filename: ";
+    std::cin>>filename;
+    std::cout << format(filename);
     return 0;
 }
