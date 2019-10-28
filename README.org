@@ -7,7 +7,8 @@
 
 * GitHub username: JabirC
 
-* Notes: Function for indenting is "std::string format(std::string filename);" which takes a filename and outputs a string with the correct format
+* Notes: Function for indenting is "std::string format(std::string filename);" which takes a filename and outputs a string with the correct format. The tests for format
+compares the formatted string in the code files with the current version of the current code files.
 
 
 * General instructions:
