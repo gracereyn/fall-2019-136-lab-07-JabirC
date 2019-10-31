@@ -2,7 +2,7 @@
 
 * Reviewed by Jabir Chowdury
 
-Your code works and all te tests came out successful. I think it was a good idea that you broke your function for formatting the file into several smaller functions. Doing so makes your code much easier to test as you can tell where in your code a bug is in. I think you
+Your code works and all the tests came out successful. I think it was a good idea that you broke your function for formatting the file into several smaller functions. Doing so makes your code much easier to test as you can tell where in your code a bug is in. I think you
 should have added more test cases for each function in order to make it more error proof. Most of the time one test case is not enough to cover all the possible cases.
 Also I noticed that when you were testing the formatting function, you created a string literal of the formatted file to check it with the return value of the function. I think that is a bit tedious and insted I recommend that you create other helper functions that
 read the correctly formatted file and then test it with the formatting function.
