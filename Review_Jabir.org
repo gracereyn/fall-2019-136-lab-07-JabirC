@@ -1,0 +1,5 @@
+* Review of Jabir's code
+
+* Reviewed by Joe Suzuki
+
+Running each test case ran successfully on my machine, it was a good idea to test each function in funcs.cpp independently because it encourages accurate return values. The formating algorithm is creative in storing each line in an array. I would make separate functions for each part of the formating program as it is long and may be prone to future mistakes. I would use a while loop for the removeLeadingSpaces function as it would be a solution to removing the break statement. I recommend making a helper function for the ifstreams input as it would be safe to test if the ifstream input fails in each ifstream occurrence.
