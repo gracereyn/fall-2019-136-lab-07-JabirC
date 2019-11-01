@@ -48,9 +48,15 @@ std::string format(std::string filename){
     }
   }
   int braces = 0;
+  bool dent = false;
+  std::string temp;
   std::string ret ="";
   for(i =0;i<lines;i++){
     int y= 0;
+    if(dent) {
+      ret += "\t";
+      dent = false;
+    }
     if(program[i][0] == '}' )y++;
     while (y < braces){
       ret+="\t";
@@ -58,6 +64,12 @@ std::string format(std::string filename){
     }
     ret+= program[i]+ "\n";
     braces += countChar(program[i], '{') - countChar(program[i], '}');
+    temp = program[i];
+    for(int j = 0; j < temp.length(); j++) {
+      if(temp.substr(j, j+3) == "for" || temp.substr(j, j+2) == "if") {
+         dent = true;
+      }
+    }
   }
   return ret;
 }
